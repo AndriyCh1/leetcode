@@ -6,8 +6,6 @@ Note that the partition is done so that after removing the fill character from t
 
 Given the string s, the size of each group k and the character fill, return a string array denoting the composition of every group s has been divided into, using the above procedure.
 
- 
-
 Example 1:
 
 Input: s = "abcdefghi", k = 3, fill = "x"
@@ -18,6 +16,7 @@ The next 3 characters "def" form the second group.
 The last 3 characters "ghi" form the third group.
 Since all groups can be completely filled by characters from the string, we do not need to use fill.
 Thus, the groups formed are "abc", "def", and "ghi".
+
 Example 2:
 
 Input: s = "abcdefghij", k = 3, fill = "x"
@@ -69,3 +68,21 @@ var divideString = function (s, k, fill) {
 };
 
 console.log(divideString("ctoyjrwtngqwt", 8, "n"));
+
+/*
+
+NOTE: The fastest solution:
+
+var divideString = function(s, k, fill) {
+
+  let str = s;
+  if(str.length % k > 0) str = s.padEnd(s.length+ (k-(s.length % k)), fill);
+  
+  let strArr = [];
+  for(i=0; i<str.length/k; i++) {
+      strArr.push(str.substring(i*k, i*k+k))
+  }
+  return strArr;
+};
+
+*/
