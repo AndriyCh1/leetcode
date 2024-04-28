@@ -58,7 +58,7 @@ var divideString = function (s, k, fill) {
   }
 
   if (currentGroup.length && currentGroup.length < k) {
-    for (let i = 0; i <= k - currentGroup.length; i++) {
+    while (currentGroup.length !== k) {
       currentGroup += fill;
     }
 
@@ -68,4 +68,4 @@ var divideString = function (s, k, fill) {
   return groups;
 };
 
-console.log(divideString("abcdefghij", 3, "x"));
+console.log(divideString("ctoyjrwtngqwt", 8, "n"));
