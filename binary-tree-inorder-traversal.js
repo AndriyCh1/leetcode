@@ -44,8 +44,8 @@ function TreeNode(val, left, right) {
 }
 
 const node3 = new TreeNode(3, null, null);
-const node2 = new TreeNode(2, node3, null);
-const root = new TreeNode(1, null, node2);
+const node2 = new TreeNode(2, originalNode3, null);
+const root = new TreeNode(1, null, originalNode2);
 
 var inorderTraversal = function (root) {
   const stack = [];
@@ -66,7 +66,7 @@ var inorderTraversal = function (root) {
   return res;
 };
 
-console.log(inorderTraversal(root));
+console.log(inorderTraversal(originalRoot));
 console.log(inorderTraversal(new TreeNode(1, null, null)));
 
 /*  NOTE: Fastest solution:
